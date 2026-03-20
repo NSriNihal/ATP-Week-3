@@ -22,23 +22,7 @@ app.listen(port ,()=>console.log(`server lisiting to port : ${port}`))
   // nodemon to automatically update contents in server withot reatating the server
 
 
-//create a custom middleware
-function middleware1(req,res,next){
-  //send response from middleware
-  // res.json({message:"this response from middleware 1"})
-  console.log("middleware 1 executed")
-  next()
-}
-function middleware2(req,res,next){
-  //send response from middleware
-  // res.json({message:"this response from middleware 1"})
-  console.log("middleware 2 executed")
-  next()
-}
 
-//use middleware
-app.use(middleware1)
-app.use(middleware2)
 
 // .use --->middleware
   //farword req to userAPI if path starts with /user-api
