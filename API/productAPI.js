@@ -11,16 +11,15 @@ export const productApp = exp.Router()
  let products = []
 
 function validatePrice(price){
-  const parsedPrice =Number(price)
-  if (parsedPrice < 10000) {
-    return 'Minimum price is 10000'
+  const pPrice =Number(price)
+  if (pPrice <10000){
+    return 'Min price is 10000'
+  }
+  if(pPrice >50000){
+    return 'Max price is 50000'
   }
 
-  if (parsedPrice > 50000) {
-    return 'Maximum price is 50000'
-  }
-
-  return null
+  
 }
 
   productApp.get('/products',(req,res)=>{
